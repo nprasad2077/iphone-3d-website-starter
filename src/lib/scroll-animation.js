@@ -72,5 +72,15 @@ export const scrollAnimation = (position, target, onUpdate) => {
         scrub: 2,
         immediateRender: false,
       },
-    });
+    })
+    .to(".display-section", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".display-section",
+        start: "top bottom",
+        end: "top top",
+        scrub: 2,
+        immediateRender: false,
+      },
+    })
 };

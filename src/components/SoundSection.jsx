@@ -1,6 +1,9 @@
 import React from "react";
 
 function SoundSection() {
+
+    
+
     return ( 
         <div className="sound-section wrapper">
             <div className="body">
