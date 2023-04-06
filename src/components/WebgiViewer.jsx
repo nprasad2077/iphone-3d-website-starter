@@ -29,10 +29,12 @@ const WebgiViewer = forwardRef((props, ref) => {
   const [targetRef, setTargetRef] = useState(null);
   const [cameraRef, setCameraRef] = useState(null);
   const [positionRef, setPositionRef] = useState(null);
-  const canvasContainerRef = useRef(null);
+  const canvasContainerRef = useRef(null); 
+  const [previewMode, setPreviewMode] = useState(false);
 
   useImperativeHandle(ref, () => ({
     triggerPreview() {
+      setPreviewMode(true)
       canvasContainerRef.current.style.pointerEvents = "all";
       props.contentRef.current.style.opacity = "0";
       gsap.to(positionRef, {
@@ -118,6 +120,11 @@ const WebgiViewer = forwardRef((props, ref) => {
   return (
     <div id="webgi-canvas-container" ref={canvasContainerRef}>
       <canvas id="webgi-canvas" ref={canvasRef} />
+      {
+        previewMode && (
+          <button className="button">Exit</button>
+        )
+      }
     </div>
   );
 });
