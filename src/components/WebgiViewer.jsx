@@ -53,11 +53,14 @@ const WebgiViewer = forwardRef((props, ref) => {
     },
   }));
 
-  const memoizedScrollAnimation = useCallback((position, target, onUpdate, isMobile) => {
-    if (position && target && onUpdate) {
-      scrollAnimation(position, target, onUpdate, isMobile);
-    }
-  }, []);
+  const memoizedScrollAnimation = useCallback(
+    (position, target, onUpdate, isMobile) => {
+      if (position && target && onUpdate) {
+        scrollAnimation(position, target, onUpdate, isMobile);
+      }
+    },
+    []
+  );
 
   const setupViewer = useCallback(async () => {
     // Initialize the viewer
@@ -134,7 +137,7 @@ const WebgiViewer = forwardRef((props, ref) => {
     gsap.to(positionRef, {
       x: !isMobile ? 1.56 : 9.36,
       y: !isMobile ? 5.0 : 10.95,
-      z: !isMobile ? 0.01: 0.09,
+      z: !isMobile ? 0.01 : 0.09,
       scrollTrigger: {
         trigger: ".display-section",
         start: "top bottom",
@@ -148,7 +151,7 @@ const WebgiViewer = forwardRef((props, ref) => {
       },
     });
     gsap.to(targetRef, {
-      x: !isMobile ? -0.55: -1.62,
+      x: !isMobile ? -0.55 : -1.62,
       y: !isMobile ? 0.32 : 0.02,
       z: !isMobile ? 0.0 : -0.06,
       scrollTrigger: {
