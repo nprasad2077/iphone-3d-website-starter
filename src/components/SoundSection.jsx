@@ -2,6 +2,15 @@ import React from "react";
 
 function SoundSection() {
 
+    const handleLearnMore = () => {
+        const element = document.querySelector(".display-section");
+        window.scrollTo({
+          top: element?.getBoundingClientRect().bottom,
+          left: 0,
+          behavior: "smooth",
+        });
+      };
+
     
 
     return ( 
@@ -12,7 +21,15 @@ function SoundSection() {
                     <p className="text">Feel the base</p>
                     <span className="description">
                         From $41.62/mo. for 24 mo. or $999 before trade-in
-                    </span>
+                    </span> 
+                    <ul className="links">
+                        <li>
+                            <button className="button">Buy</button>
+                        </li>
+                        <li>
+                            <a className="link" onClick={handleLearnMore}>Learn more</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
