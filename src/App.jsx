@@ -3,7 +3,7 @@ import Jumbotron from "./components/Jumbotron";
 import SoundSection from "./components/SoundSection";
 import DisplaySection from "./components/DisplaySection";
 import WebgiViewer from "./components/WebgiViewer";
-import Loader from './components/Loader'
+import Loader from "./components/Loader";
 import { useRef } from "react";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         <SoundSection />
         <DisplaySection triggerPreview={handlePreview} />
       </div>
-      <WebgiViewer ref={webgiViewerRef} contentRef={contentRef}/>
+      <WebgiViewer ref={webgiViewerRef} contentRef={contentRef} />
     </div>
   );
 }
